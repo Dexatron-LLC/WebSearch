@@ -18,6 +18,28 @@ uv run python server.py
 
 ## Claude Code Configuration
 
+### Using from GitHub (no clone required)
+
+Add to your `~/.claude/claude_code_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "web-navigator": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/Dexatron-LLC/WebSearch", "web-navigator-mcp"]
+    }
+  }
+}
+```
+
+Note: You'll need to install Playwright's Chromium browser once:
+```bash
+uvx --from git+https://github.com/Dexatron-LLC/WebSearch playwright install chromium
+```
+
+### Using from local clone
+
 Add to your `~/.claude/claude_code_config.json`:
 
 ```json
@@ -26,7 +48,7 @@ Add to your `~/.claude/claude_code_config.json`:
     "web-navigator": {
       "command": "uv",
       "args": ["run", "python", "server.py"],
-      "cwd": "/path/to/web-navigator-mcp"
+      "cwd": "/path/to/WebSearch"
     }
   }
 }
