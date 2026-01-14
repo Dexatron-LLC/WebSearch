@@ -35,7 +35,7 @@ Add to your `~/.claude/claude_code_config.json`:
 
 Note: You'll need to install Playwright's Chromium browser once:
 ```bash
-uvx --from git+https://github.com/Dexatron-LLC/WebSearch playwright install chromium
+uvx --from playwright playwright install chromium
 ```
 
 ### Using from local clone
